@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <div id="studentCard"></div>
+  <script>
+
+        class StudentCard {
+
+            constructor(name, age, faculty, year, photo) {
+                this.name = name;
+                this.age = age;
+                this.faculty = faculty;
+                this.year = year;
+                this.photo = photo;
+            }
+
+
+            introduce() {
+                return `Студент ${this.name}, ${this.age} лет, факультет ${this.faculty}, курс ${this.year}.`;
+            }
+
+
+            updateYear() {
+                this.year++;
+            }
+
+
+            graduate() {
+                if (this.year > 4) {
+                    return `Студент ${this.name} закончил обучение.`;
+                }
+            }
+
+
+            changeFaculty(newFaculty) {
+                this.faculty = newFaculty;
+            }
+        }
+
+
+        let student = new StudentCard("Злата",16,"IT",1,"photo.jpg");
+
+
+        let card = document.getElementById("studentCard");
+
+
+        card.innerHTML = `
+            <div class="card">
+
+                <img src="${photo.webp}" alt="Фото студента">
+
+                <div class="info">
+                    <p>Name: ${student.name}</p>
+                    <p>Age: ${student.age}</p>
+                    <p>Faculty: ${student.faculty}</p>
+                    <p>Year: ${student.year}</p>
+                </div>
+
+            </div>
+        `;
+
+    </script>
+</body>
+</html>
